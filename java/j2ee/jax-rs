@@ -1,0 +1,8 @@
+# JAX-RS
+
+Spécification pour les architectures de type RESTful.
+
+## Jersey
+
+Jersey est une implémentation de JAX-RS. Autrefois sous le package `com.sun.jersey` mais changé sous `org.glassfish.jersey` car l'équipe chargé de son développement ont changé d'organisation.
+Les versions en dessous de 2.0 appartiennent à `com.sun.jersey`, les versions au dessus à `org.glassfish.jersey`. Il semble y avoir des différences entre 1.x et 2.x.
