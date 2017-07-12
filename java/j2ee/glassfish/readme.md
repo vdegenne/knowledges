@@ -1,5 +1,9 @@
 # glassfish
 
+## redeploy
+
+`deploy --force=true newApp.war`
+
 ## secure admin
 
 secure admin permet de se connecter à l'interface de gestion du serveur glassfish web.
