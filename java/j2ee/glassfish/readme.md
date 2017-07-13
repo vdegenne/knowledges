@@ -2,7 +2,9 @@
 
 ## redeploy
 
-```asadmin deploy --force=true newApp.war```
+```
+asadmin deploy --force=true newApp.war
+```
 
 ## secure admin
 
@@ -12,12 +14,16 @@ Il va donc falloir en ajouter un avant d'activer le mode "Secure Admin" car glas
 
 Pour ajouter un mot de passe à admin,
 
-```$ asadmin change-admin-password```
+```
+$ asadmin change-admin-password
+```
 appuyer 2 fois sur Enter pour séléctionner "admin" et son mot de passe vide. Puis entrer le mot de passe souhaité.
 
 Une fois le mot de passe créé, on peut activer le mot "Secure Admin" pour un serveur en particulier comme ceci,
 
-```$ asadmin --host localhost --port 4848 enable-secure-admin```
+```
+$ asadmin --host localhost --port 4848 enable-secure-admin
+```
 
 ### liens 
 https://stackoverflow.com/questions/8619063/glassfish-3-1-1-how-to-enable-secure-admin-for-different-domains
