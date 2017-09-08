@@ -5,7 +5,7 @@ Jersey est une librairie Java (plus spécifiquement une librairie Java EE) qui pe
 
 ## @XmlRootElement
 
-Les objets impliqués dans les transactions Jersey, et particulièrement dans les manipulations d'objets Json, doivent avoir l'annotation @XmlRootElement. Cette annotation permet de traduire l'objet en structure XML interprétable par les processus sous-jacents.
+Les objets impliqués dans les transactions Jersey, et particulièrement dans les manipulations de données XML, doivent avoir l'annotation @XmlRootElement. Cette annotation permet de traduire l'objet en structure XML interprétable par les processus sous-jacents.
 
 ```java
 import javax.xml.bind.annotation.XmlRootElement;
