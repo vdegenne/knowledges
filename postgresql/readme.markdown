@@ -1,3 +1,7 @@
+## statements
+
+- `IN` and `any` are the same [stackoverflow.com/postgresql-in-vs-any](https://stackoverflow.com/questions/30263671/postgresql-in-vs-any "stackoverflow")
+
 ## functions
 
 ### examples
