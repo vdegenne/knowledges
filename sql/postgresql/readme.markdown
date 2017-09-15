@@ -4,7 +4,7 @@
 
 ## <a name="commits"></a> commits and rollbacks
 
-postgresql is auto-rolling-back on commits' fails. It means we can't make our own custom rolling-back strategy on the back-end (for the good ?). See my answer on this post for how to extend exception handling on rollbacks : [How can I tell PostgreSQL not to abort the whole transaction when a single constraint has failed?](https://stackoverflow.com/questions/9436122/how-can-i-tell-postgresql-not-to-abort-the-whole-transaction-when-a-single-const/46229608#46229608).
+postgresql is auto-rolling-back on commits' fails. It means we can't make our own custom rolling-back strategy on the back-end (for the good ?). See my answer on this post for how to extend exception handling on rollbacks : [How can I tell PostgreSQL not to abort the whole transaction when a single constraint has failed?](https://stackoverflow.com/questions/9436122/how-can-i-tell-postgresql-not-to-abort-the-whole-transaction-when-a-single-const/46229608#46229608).  
 Rollback means changing the data back to its original state, even the one changed from triggered procedures.
 
 ## functions
@@ -27,8 +27,8 @@ $BODY$
   ROWS 1000;
 ```
 
-##triggers
-###examples
+## triggers
+### examples
 ```sql
 create function schema.add_after_insert ()
   returns trigger as $$
@@ -43,6 +43,7 @@ create trigger tafter after insert or update or delete on schema.t1
 ```
 
 *(note : a trigger needs to return something. "null" if nothing is to be returned)*
+
 *(note2 : the data changed from triggers will also get rolled-back on commits' fails. See [commits and rollbacks](#commits))*
 
 
