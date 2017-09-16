@@ -53,6 +53,12 @@ create trigger tafter after insert or update or delete on schema.t1
 *note : the data changed from triggers will also get rolled-back on commits' fails. See [commits and rollbacks](#commits)*  
 *note #2 : [origin](https://stackoverflow.com/a/14262289/773595)*
 
+We can use useful constant inside the trigger procedure :
+
+- **TG_OP** : the operation that triggered the procedure ('DELETE', 'UPDATE', 'INSERT', ...)
+- **TG_TABLE_NAME** : the table name that triggered the procedure.
+- **user** : the current connected user (e.g. 'postgres').
+
 ## sqlstate
 
 When postgresql throws an exception it also sends a sqlstate back to the process that invoked the transaction. That means you can use that code to handle proper actions to specific exceptions. You can also make your own codes (for example, in user-defined triggers) :
@@ -63,6 +69,20 @@ raise exception 'exception message' using errcode='12345';
 *(note : the errcode needs to be 5bits long.)*
 
 An example of how to use the code on a back-end program : 
+
+
+## case structure
+
+### example
+```sql
+SELECT a,
+       CASE WHEN a=1 THEN 'one'
+            WHEN a=2 THEN 'two'
+            ELSE 'other'
+       END
+    FROM test;
+```
+*(from [postgresql.org/docs](https://www.postgresql.org/docs/7.4/static/functions-conditional.html))*
 
 ## save and recovery
 
