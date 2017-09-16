@@ -39,18 +39,19 @@ if (TG_OP = 'DELETE') then
 end if;
 
 insert into schema.t2 values (...);
-return null;
+return null; -- a trigger needs a return statement, use "null" in and AFTER trigger if nothing is to be returned or else "NEW" or "OLD"
 
 end; $$
   language plpgsql;
 
 create trigger tafter after insert or update or delete on schema.t1
-  for each row execute procedure test.add_after_insert();
+  for each row
+  [when (pg_trigger_depth() = 0)] -- we can use that if triggers trigger others triggers, and need to prevent a recursive loop (see note #2).
+  execute procedure test.add_after_insert();
 ```
-
-*note #1 : a trigger needs a return statement, use "null" in an AFTER trigger if nothing is to be returned or else `NEW` or `OLD`*  
-*note #2 : the data changed from triggers will also get rolled-back on commits' fails. See [commits and rollbacks](#commits)*
-
+ 
+*note : the data changed from triggers will also get rolled-back on commits' fails. See [commits and rollbacks](#commits)*
+*note #2 : [origin](https://stackoverflow.com/a/14262289/773595)*
 
 ## sqlstate
 
