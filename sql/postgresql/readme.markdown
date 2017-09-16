@@ -33,8 +33,14 @@ $BODY$
 create function schema.add_after_insert ()
   returns trigger as $$
 begin
+if (TG_OP = 'DELETE') then
+  ...
+  return old;
+end if;
+
 insert into schema.t2 values (...);
 return null;
+
 end; $$
   language plpgsql;
 
@@ -42,9 +48,8 @@ create trigger tafter after insert or update or delete on schema.t1
   for each row execute procedure test.add_after_insert();
 ```
 
-*(note : a trigger needs to return something. "null" if nothing is to be returned)*
-
-*(note2 : the data changed from triggers will also get rolled-back on commits' fails. See [commits and rollbacks](#commits))*
+*note #1 : a trigger needs a return statement, use "null" in an AFTER trigger if nothing is to be returned or else `NEW` or `OLD`*  
+*note #2 : the data changed from triggers will also get rolled-back on commits' fails. See [commits and rollbacks](#commits)*
 
 
 ## sqlstate
