@@ -89,18 +89,19 @@ SELECT a,
 ### pg_dump
 
 ```bash
-pg_dump -h <host> [-U <username>] [-F<format>] [-n <schema>] <databasename> > <dumpfile>
+pg_dump -h <host> [-U <username>] [-F<format>] [--inserts] [-n <schema>] <databasename> > <dumpfile>
 ```
 *\<format\>* : **p** (plain, the default), **c** (custom), **d** (directory), **t** (tar)
+*--inserts** : rather than COPY
 
 *for instance :*
-```
+```bash
 $ pg_dump -h 1.2.3.4 -U postgres -Fc -n myapp mainDatabase > dump.sql
 ```
 
 ### pg_restore
 
-```
+```bash
 $ pg_restore -d <databasename> <dumpfile>
 ```
 **-d <databasename>** : the databasename needs to point an existing database. We can use `$ createdb <databasename>` to create one.
