@@ -89,15 +89,20 @@ SELECT a,
 ### pg_dump
 
 ```bash
-pg_dump -h <host> [-U <username>] [-F<format>] [--inserts] [-n <schema>] <databasename> > <dumpfile>
+pg_dump -h <host> [-U <username>] [-F<format>] [--inserts] [-n <schema>] [--section=<section> ... | -a] <databasename> > <dumpfile>
 ```
 *\<format\>* : **p** (plain, the default), **c** (custom), **d** (directory), **t** (tar)  
 *--inserts* : rather than COPY
+*\<section\>* : **pre-data**, **data**, **post-data** (multiple --section, default to all)
+*-a* : data-only (similar to --section=data)
 
 *for instance :*
 ```bash
-$ pg_dump -h 1.2.3.4 -U postgres -Fc --inserts MyAppDatabase > dump.sql
+$ pg_dump -h 1.2.3.4 -U postgres -Fc -n MySchema MyAppDatabase > dump.sql
+$ pg_dump -h 1.2.3.4 -U postgres -Fp -a
 ```
+
+[source](https://www.postgresql.org/docs/10/static/app-pgdump.html)
 
 ### pg_restore
 
