@@ -91,12 +91,12 @@ SELECT a,
 ```bash
 pg_dump -h <host> [-U <username>] [-F<format>] [--inserts] [-n <schema>] <databasename> > <dumpfile>
 ```
-*\<format\>* : **p** (plain, the default), **c** (custom), **d** (directory), **t** (tar)
-*--inserts** : rather than COPY
+*\<format\>* : **p** (plain, the default), **c** (custom), **d** (directory), **t** (tar)  
+*--inserts* : rather than COPY
 
 *for instance :*
 ```bash
-$ pg_dump -h 1.2.3.4 -U postgres -Fc -n myapp mainDatabase > dump.sql
+$ pg_dump -h 1.2.3.4 -U postgres -Fc --inserts MyAppDatabase > dump.sql
 ```
 
 ### pg_restore
