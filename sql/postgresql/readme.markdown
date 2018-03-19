@@ -102,7 +102,7 @@ $ pg_dump -h 1.2.3.4 -U postgres -Fc -n MySchema MyAppDatabase > dump.sql
 $ pg_dump -h 1.2.3.4 -U postgres -Fp -a
 ```
 
-[source](https://www.postgresql.org/docs/10/static/app-pgdump.html)
+<a target=_blank href="https://www.postgresql.org/docs/10/static/app-pgdump.html">source</a>
 
 ### pg_restore
 
