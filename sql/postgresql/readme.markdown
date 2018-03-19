@@ -94,7 +94,7 @@ pg_dump -h <host> [-U <username>] [-F<format>] [--inserts] [-n <schema>] [--sect
 *\<format\>* : **p** (plain, the default), **c** (custom), **d** (directory), **t** (tar)  
 *--inserts* : rather than COPY
 *\<section\>* : **pre-data**, **data**, **post-data** (multiple --section, default to all)
-*-a* : data-only (similar to --section=data)
+*-a* = --data-only (similar to --section=data alone)
 
 *for instance :*
 ```bash
