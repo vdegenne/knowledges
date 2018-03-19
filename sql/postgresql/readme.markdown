@@ -89,9 +89,14 @@ SELECT a,
 ### pg_dump
 
 ```
-$ pg_dump -h <host> -F<format> -n <schema> <databasename> > <dumpfile>
+pg_dump -h <host> [-U <username>] [-F<format>] [-n <schema>] <databasename> > <dumpfile>
+
+for instance :
+$ pg_dump -h 1.2.3.4 -U postgres -Fc -n myapp mainDatabase > dump.sql
 ```
 
+*\<format\>* : **p** (plain, the default), **c** (custom), **d** (directory), **t** (tar)
+  
 ### pg_restore
 
 ```
@@ -99,4 +104,4 @@ $ pg_restore -d <databasename> <dumpfile>
 ```
 **-d <databasename>** : the databasename needs to point an existing database. We can use `$ createdb <databasename>` to create one.
 
-**<dumpfile>** refers to a file generated from pg_dump (it can be a custom-file, a tar, or a plain generated file).
+*\<dumpfile\>* refers to a file generated from pg_dump (it can be a custom-file, a tar, or a plain generated file).
