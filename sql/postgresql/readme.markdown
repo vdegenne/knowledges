@@ -88,15 +88,16 @@ SELECT a,
 
 ### pg_dump
 
-```
+```bash
 pg_dump -h <host> [-U <username>] [-F<format>] [-n <schema>] <databasename> > <dumpfile>
+```
+*\<format\>* : **p** (plain, the default), **c** (custom), **d** (directory), **t** (tar)
 
-for instance :
+*for instance :*
+```
 $ pg_dump -h 1.2.3.4 -U postgres -Fc -n myapp mainDatabase > dump.sql
 ```
 
-*\<format\>* : **p** (plain, the default), **c** (custom), **d** (directory), **t** (tar)
-  
 ### pg_restore
 
 ```
