@@ -98,17 +98,19 @@ pg_dump -h <host> [-U <username>] [-F<format>] [--inserts] [-n <schema>] [--sect
 
 *for instance :*
 ```bash
-$ pg_dump -h 1.2.3.4 -U postgres -Fc -n MySchema MyAppDatabase > dump.sql
-$ pg_dump -h 1.2.3.4 -U postgres -Fp -a
+$ pg_dump -h 1.2.3.4 -U postgres -Fc -n MySchema MyAppDatabase > db.dump
+$ pg_dump -h 1.2.3.4 -U postgres -Fp -a --inserts MyAppDatabase > dump.sql
 ```
 
-<a target=_blank href="https://www.postgresql.org/docs/10/static/app-pgdump.html">source</a>
+<a target=_blank href="https://www.postgresql.org/docs/10/static/app-pgdump.html">source (postgresql.org)</a>
 
 ### pg_restore
 
 ```bash
 $ pg_restore -d <databasename> <dumpfile>
 ```
-**-d <databasename>** : the databasename needs to point an existing database. We can use `$ createdb <databasename>` to create one.
+*\<databasename\>* : the databasename needs to point an existing database. We can use `$ createdb <databasename>` to create one.
 
 *\<dumpfile\>* refers to a file generated from pg_dump (it can be a custom-file, a tar, or a plain generated file).
+
+[source (postgresql.org)](https://www.postgresql.org/docs/10/static/app-pgrestore.html)
