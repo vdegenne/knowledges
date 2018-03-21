@@ -1,0 +1,1 @@
+ouvrir "j2ee + gradle explications.ai" pour avoir une vue globale des fonctionnalités de Gradle.
