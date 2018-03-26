@@ -9,6 +9,7 @@
 - Une fois que les bases de Spring Boot sont comprises (en suivant quelques guides [Guides Spring](https://spring.io/guides)), on peut basculer sur les documentations de la Framework Spring en elle-même pour mieux comprendre son fonctionnement : [voir Documentation et API](https://projects.spring.io/spring-framework).
 
 
-# General
+# Propriétés
 
-- `@Value("${myprop}")` ou en utilisant [`@ConfigurationProperties` sur un bean](https://docs.spring.io/spring-boot/docs/2.0.0.RELEASE/reference/htmlsingle/#boot-features-external-config-typesafe-configuration-properties)
+- `@Value("${myprop}")` ou en utilisant [`@ConfigurationProperties` sur un Bean](https://docs.spring.io/spring-boot/docs/2.0.0.RELEASE/reference/htmlsingle/#boot-features-external-config-typesafe-configuration-properties)
+- Les Beans annotés `@ConfigurationProperties` permet d'avoir un système de validation des propriétés (`@NotNull`, `@NotEmpty`, ...).
