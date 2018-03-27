@@ -9,7 +9,7 @@
 
 ## récemment
 
-- utilisera le nom des packages dans les imports plutôt que le chemin (path) vers ces packages. Par exemple
+- utilisera le nom des packages ("bare module specifier") dans les imports plutôt que le chemin (path) vers ces packages. Par exemple
 ```javascript
 import {PolymerElement} from '@polymer/polymer/polymer-element.js'
 /* anciennement */
