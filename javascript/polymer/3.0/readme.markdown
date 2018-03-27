@@ -5,3 +5,4 @@
 - utiliser `"flat": true` dans le *package.json*
 - `yarn add @polymer/polymer@next` to install polymer
 - `yarn add @polymer/<element>@next` to install an element
+- `<script type="module" src="./path/to/script.js"></script>` pour inclure le script dans un explorateur moderne.
