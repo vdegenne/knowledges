@@ -1,6 +1,7 @@
 # Spring
 
 - Les documentations sont dispo sur le site officiel : [Documentation et API](https://projects.spring.io/spring-framework).
+- restart (recompile l'application après qu'un fichier dans le classpath a été modifié) =/= live reload (resources statiques)
 
 ## Spring Boot
 
