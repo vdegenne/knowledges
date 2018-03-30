@@ -1,7 +1,25 @@
+# JavaScript
+
+- Les objets sont passés par référence :
+```javascript
+let o = {
+    foo: 'bar'
+}
+
+const a = o; //object are passed using references
+a.foo = 'baz';
+
+const b = Object.assign({}, a);
+// b gets dissociated from a and then from o
+b.foo = 'qux';
+// therefore this change won't affect o
+
+console.log(o);
+```
+
 ## Manipulating objects data
 
 see this [overflow](https://stackoverflow.com/a/46386334/773595)
-
 
 Javascript ES6
 ==============
