@@ -2,7 +2,7 @@
 
 [des exemples ici](https://github.com/vdegenne/ES6-examples)
 
-## modules [exemple](https://github.com/vdegenne/ES6-examples/tree/master/modules)
+## Modules [exemple](https://github.com/vdegenne/ES6-examples/tree/master/modules)
 
 - les modules sont des fichiers qui exposent des objets (variables, fonctions, ...), généralements des APIs, utilisables par d'autres scripts ou d'autres modules.
 - on utilise `export` ou `import` pour exposer ou pour importer des éléments exposés respectivement.
@@ -11,3 +11,8 @@
 ```javascript
 import * as lodash from 'lodash'
 ```
+
+## Implémentations
+
+- `async` et `await` semblent avoir été introduits à partir de Node 7.6.0.
+- `util.promisify(<function>)` depuis Node 8.

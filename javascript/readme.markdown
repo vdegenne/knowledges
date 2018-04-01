@@ -1,6 +1,7 @@
 # JavaScript
 
 - Les objets sont passés par référence :
+
 ```javascript
 let o = {
     foo: 'bar'
