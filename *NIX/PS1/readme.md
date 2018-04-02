@@ -13,18 +13,18 @@ It will modify all the text on the right.
 To stop the modification, use the ES `\e[0m`
 
 
-## Possible <modifier>
+## Possible \<modifier\>
 
-- **38;5;/<color/> :** change the text to /<color/><sup>1</sup>
+- **38;5;\<color\> :** change the text to \<color\><sup>1</sup>
 ```bash
 # example
 \e[38;5;48m I'm very green
 ```
 
-- **48;5;/<color/> :** change the background to /<color/><sup>1</sup>
+- **48;5;\<color\> :** change the background to \<color\><sup>1</sup>
 ```bash
 # example
-\e[48;5;48m I'm green background
+\e[48;5;48m I have a green background
 ```
 
 - **1 :** change the text to bold
@@ -39,6 +39,8 @@ To stop the modification, use the ES `\e[0m`
 ```
 
 - **0 :** no text transform
+
+
 
 <sup>1</sup> All possible colors can be checked using this function :
 ```bash
@@ -57,7 +59,7 @@ You can also combine the modifiers, for instance :
 ```bash
 \e[38;5;48;1m I am green and bold
 \e[38;5;124;48;5;211;4m I am underline, burgundy on pink background
-(the order doesn't matter)
+# (the order doesn't matter)
 ```
 
 ## Placeholders
