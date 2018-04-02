@@ -15,3 +15,5 @@ xinit /etc/X11/xinit/xinitrc -- /etc/X11/xinit/xserverrc :2 vt6 -keeptty -auth /
 /usr/lib/xorg/Xorg -nolisten tcp :2 vt6 -keeptty -auth /tmp/serverauth.eYIe40uC5L
 ```
 `xinit` initialise alors immédiatement un serveur `Xorg` avec les arguments fournis à droite du double-dash, et la session est décrite avec les arguments fournis à gauche. En réalité `xinit` ne fait qu'éxécuter deux fichiers `/etc/X11/xinit/xinitrc` et `/etc/X11/xinit/xserverrc`. On peut ouvrir ces fichiers dans un éditeur pour avoir plus de détails.
+
+La session définit par exemple quel environnement de fenêtre le serveur doit exécuter, des variables d'environnement, etc... On peut changer le comportement avec un fichier comme `.xinitrc`.
