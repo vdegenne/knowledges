@@ -5,16 +5,18 @@
 `'{}' \;` execute the command for each file input from the stream. While `'{}' \+` will try to concatenate the filename in one line before passing the result to the argument of the command. For instance
 
 ```bash
-find . -name foo* | xargs chown root '{}' \+
+find . -name foo* -exec chown root '{}' \+
 ```
 
 will execute `chown root foo1 foo2 foo5 ...`, but
 
 ```bash
-find . -name foo* | xargs chown root '{}' \;
+find . -name foo* -exec chown root '{}' \;
 ```
 
 will execute `chown root foo1`, and `chown root foo2`, and so on.
+
+### structure
 
 If  the  whole  expression  contains  no  actions  other than -prune or -print, -print is performed on all files for which the whole expression is true.
 
