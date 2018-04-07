@@ -1,5 +1,13 @@
 ## Debian
 
+
+### FS
+
+- `/etc/skel` inclus les fichiers de config par défaut bash pour les nouveaux utilisateurs crées. Ils seront copiés et collés dans le répertoire HOME du nouvel utilisateur.
+
+
+### Network
+
 - check if a program use a port
 ```bash
 # netstat -tulpn | grep <program>
