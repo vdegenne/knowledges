@@ -6,7 +6,7 @@ Alice et Julie qui ont acheté une place pour aller voir le concert d'Alizée. E
 Mais Alice et Julie revendent leur place pour ne pas trop être perdantes, voir pour être gagnante face au prix d'origine (18e par exemple), mais dans le monde du bitcoin les valeurs moyennes fluctuent, et donc si on veut avoir une chance de trouver des vendeurs potentiels intéressants, il faut se tourner auprès de ceux qui ont acheté leurs bitcoins d'une valeur moins élévée que le cours actuelle, voir ceux qui les ont achetés tout au début avec un prix vraiment bas, et qui n'auront moins de répit à revendre leurs biens moins cher que ce qu'ils coutent réellement (ils seront toujours gagnant au final).
 Principe de l'ascenseur graduel :
 
-
+<img width=70% src="https://github.com/vdegenne/programming/blob/master/bit/coin/economic_stairs.png?raw=true">
 
 ### notes
 
