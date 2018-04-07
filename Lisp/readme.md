@@ -1,5 +1,11 @@
 # Lisp/Emacs
 
+
+Page-Up
+Page-Down to reach minibuffer
+`C-x C-r` ouvre les buffers ouverts
+
+
 ### Init
 
 - `~/.emacs` ou `~/.emacs.el` ou `~/.emacs.d/init.el`
