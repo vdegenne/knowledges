@@ -1,31 +1,13 @@
-## Debian
+# Unix
 
+## sudoers (sur Fedora 26)
 
-### FS
-
-- `/etc/skel` inclus les fichiers de config par défaut bash pour les nouveaux utilisateurs crées. Ils seront copiés et collés dans le répertoire HOME du nouvel utilisateur.
-
-
-### Network
-
-- check if a program use a port
+- Pour ajouter un utilisateur dans le group sudoer : Sur Fedora, le groupe des sudoers se nomme "wheel". On doit donc associer un utilisateur à ce groupe :
 ```bash
-# netstat -tulpn | grep <program>
+gpasswd wheel -a <username>
+# or the classic,
+usermod -aG wheel <username>
 ```
-
-- open a specific port to the public
-```bash
-# firewall-cmd --permanent --zone=public --add-port=80/tcp
-# systemctl restart firewalld
-```
-
-- Installer un package qui a "fail" pendant l'installation manuelle
-```bash
-$ sudo dpkg -i <package-name>
-# if it fails
-$ sudo apt-get install -f
-```
-
 
 ## tty
 
