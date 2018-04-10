@@ -17,3 +17,7 @@ xinit /etc/X11/xinit/xinitrc -- /etc/X11/xinit/xserverrc :2 vt6 -keeptty -auth /
 `xinit` initialise alors immédiatement un serveur `Xorg` avec les arguments fournis à droite du double-dash, et la session est décrite avec les arguments fournis à gauche. En réalité `xinit` ne fait qu'éxécuter deux fichiers `/etc/X11/xinit/xinitrc` et `/etc/X11/xinit/xserverrc`. On peut ouvrir ces fichiers dans un éditeur pour avoir plus de détails.
 
 La session définit par exemple quel environnement de fenêtre le serveur doit exécuter, des variables d'environnement, etc... On peut changer le comportement avec un fichier comme `.xinitrc`.
+
+## configurations
+
+- Les configurations Xorg (clavier, souris, etc...) vont généralement dans le répertoire `/etc/X11/xorg.conf.d/` sous forme de fichiers. Chaque fichier contient des configurations spécifiques à une couche en particulier (clavier, souris, touchpad, ...). Ils sont pris en compte au démarrage du serveur X, il faut donc redémarrer le serveur quand on veut que les modifications prennent effet.
