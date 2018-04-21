@@ -9,7 +9,8 @@ sudo dnf install postgresql-server postgresql-contrib
 ```
 - on initialise l'environnement
 ```bash
-sudo postgresql-setup --initdb --unit postgresql
+# sudo postgresql-setup --initdb --unit postgresql
+sudo initdb -E UTF8 # this is recommended to make UTF8 the default encoding of databases.
 ```
 - on active le daemon
 ```bash
@@ -28,7 +29,7 @@ su - postgres
 - puis on lance `psql`
 - on crée un nouvel utilisateur
 ```bash
-postgres=# CREATE USER john WITH PASSWORD 'helloworld`;
+postgres=# CREATE USER john WITH PASSWORD 'helloworld';
 postgres=# CREATE DATABASE johndb OWNER john;
 ```
 - si on a l'intention de se connecter avec la méthode `peer` c'est à dire directement avec le compte unix et que l'utilisateur n'existe pas, on peut aussi écrire en ligne de commande :
