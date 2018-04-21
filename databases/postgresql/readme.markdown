@@ -9,8 +9,8 @@ sudo dnf install postgresql-server postgresql-contrib
 ```
 - on initialise l'environnement
 ```bash
-# sudo postgresql-setup --initdb --unit postgresql
-sudo initdb -E UTF8 # this is recommended to make UTF8 the default encoding of databases.
+sudo postgresql-setup --initdb --unit postgresql
+# sudo initdb -E UTF8
 ```
 - on active le daemon
 ```bash
@@ -20,22 +20,19 @@ sudo systemctl enable postgresql # pour le démarrer à chaque boot
 ---
 - on change le mot de passe par défaut de postgres
 ```bash
-sudo passwd postgres
+sudo -u postgres psql
+
+postgres=# alter user postgres password 'newPassword';
 ```
-- on se connect avec postgres
-```bash
-su - postgres
-```
-- puis on lance `psql`
 - on crée un nouvel utilisateur
 ```bash
 postgres=# CREATE USER john WITH PASSWORD 'helloworld';
 postgres=# CREATE DATABASE johndb OWNER john;
 ```
-- si on a l'intention de se connecter avec la méthode `peer` c'est à dire directement avec le compte unix et que l'utilisateur n'existe pas, on peut aussi écrire en ligne de commande :
+- on modifie `/var/lib/pgsql/data/pg_hba.conf` pour se connecter en `md5` ou en `peer`.
+- Si on se connecte en `peer`, on doit aussi modifier le mot de passe de l'utilisateur Unix `postgres` automatiquement créer dans les étapes précédentes.
 ```bash
-createuser john
-createdb --owner=john johndb
+sudo passwd postgres
 ```
 
 ### Upgrade
