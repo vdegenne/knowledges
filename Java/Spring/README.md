@@ -1,11 +1,19 @@
 # Spring
 
-- Les documentations sont dispo sur le site officiel : [Documentation et API](https://projects.spring.io/spring-framework).
-- restart (recompile l'application après qu'un fichier dans le classpath a été modifié) =/= live reload (resources statiques)
+- Les documentations sont disponibles sur le site officiel : [Documentation et API](https://projects.spring.io/spring-framework).
+- restart (recompile l'application après qu'un fichier dans le classpath a été modifié) =/= live reload (resources statiques).
 
 ## Spring Boot
 
 - Spring boot permet seulement de faciliter le démarrage d'un projet Spring, il n'est pas obligatoire, mais recommandé.
+
+- On peut télécharger un squelette de départ sur [spring initializr](https://start.spring.io/). Mais le meilleur moyen c'est d'utiliser `curl` :
+
+```bash
+curl https://start.spring.io/starter.tgz -d style=web -d name=MyApp -d groupId=fr.name
+```
+
+- `-d` permet de spécifier des paramètres. On peut voir une liste de paramètres [ici](https://gist.github.com/fernandoabcampos/c380e4354e4443d36619).
 
 - Une fois que les bases de Spring Boot sont comprises (en suivant quelques guides [Guides Spring](https://spring.io/guides)), on peut basculer sur les documentations de la Framework Spring en elle-même pour mieux comprendre son fonctionnement : [voir Documentation et API](https://projects.spring.io/spring-framework).
 
