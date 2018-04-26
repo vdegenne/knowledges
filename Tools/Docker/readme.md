@@ -39,6 +39,11 @@ docker run -d --rm --name my-app --network my-network -p 80:8080 myapp
 docker exec -it my-app ping my-pgsql
 ```
 
+## Dockerfile
+
+- `RUN` est utilisé pendant la création de l'image. Et `CMD` est utilisé lorsque l'on lance l'image créée avec `docker run`.
+
+
 ## docker-compose
 
 - On peut passer des variables d'environnement dans le docker-compose.yml en utilisant la syntaxe suivante `${<ENV_VAR>}` où <ENV_VAR> représente la clé de la variable.
