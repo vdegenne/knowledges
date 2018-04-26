@@ -26,6 +26,12 @@ Assigner un nom à un containeur est vraiment important. Cela permet de pouvoir 
 
 - S'imaginer un container comme un espace clôt, avec seulement un environnement d'exécution (runtime environment) léger (e.g. `python:2.7-slim`, `openjdk:8-jdk-alpine`, ...), des ports qu'on ouvre et qu'on ferme pour communiquer avec d'autres containeurs (e.g. `EXPOSE 80`), des fichiers qu'on place à l'intérieur et qui représentent notre application (e.g. `COPY . /usr/src/app`), des variables d'environnement qu'on ajoute pour configurer l'espace (e.g. `ENV HELLO world`) et des exécutions qu'on contrôle (e.g. `CMD python app.py`) pour lancer notre application ou nos services.
 
+## Volumes
+
+```bash
+docker run ... -v ~/host/path:/container/path my-app
+```
+Pour attacher le chemin `/container/path` dans le container (créé si non existant) au chemin `~/host/path` sur l'hôte Docker. Les deux chemins communiquent, c'est à dire que si on créer un fichier sur l'hôte il est présent dans le containeur et inversement.
 
 ## Network
 
