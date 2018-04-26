@@ -4,6 +4,7 @@
 
 ## Comportement
 
+- `require` est toujours synchrone et ne peut pas être lancé asynchroniquement.
 - `node -e 'console.log(1+1)'`
 - Quand on installe un module (ex. `yarn add mocha -D`), les binaires du module, si il y en a, se trouvent dans `./node_modules/.bin/`. Quand on lance un script présent dans `package.json` avec npm/yarn, le moteur cherche d'abord le binaire dans ce répertoire local, puis dans le système s'il ne l'a pas trouvé. C'est donc important d'inclure les modules qu'on utilise dans notre projet (et non globalement) pour éviter que npm/yarn lance nos scripts avec une version d'un module depuis le système, qui peut être obsolète ou incohérent avec d'autres dépendances locales.
 
