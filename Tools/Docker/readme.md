@@ -35,7 +35,10 @@ Assigner un nom à un containeur est vraiment important. Cela permet de pouvoir 
 docker network create my-network
 docker run -d --name my-pgsql --network my-network -p 5432:5432 -e POSTGRES_PASSWORD=secret postgres
 docker run -d --rm --name my-app --network my-network -p 80:8080 myapp
-# now inside my-app we can connect to the database with host `my-pgsql:5432`
+# now inside my-app we can connect to the database with host my-pgsql:5432
+docker exec -it my-app ping my-pgsql
 ```
 
+## docker-compose
 
+- On peut passer des variables d'environnement dans le docker-compose.yml en utilisant la syntaxe suivante `${<ENV_VAR>}` où <ENV_VAR> représente la clé de la variable.
