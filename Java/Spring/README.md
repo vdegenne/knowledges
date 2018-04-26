@@ -25,3 +25,14 @@ curl https://start.spring.io/starter.tgz -d style=web -d name=MyApp -d groupId=f
 
 - `@Value("${myprop}")` ou en utilisant [`@ConfigurationProperties` sur un Bean](https://docs.spring.io/spring-boot/docs/2.0.0.RELEASE/reference/htmlsingle/#boot-features-external-config-typesafe-configuration-properties)
 - Les Beans annotés `@ConfigurationProperties` permet d'avoir un système de validation des propriétés (`@NotNull`, `@NotEmpty`, ...).
+
+
+
+## Etapes d'un projet Spring
+
+- Récupération des fichiers de départ
+- Ajout des dépendances additionnelles (dans `pom.xml`)
+- Configurations dans `application.properties` (pour la base, etc...)
+- Création de la base de données locale. La base de données locale est une base de test et les données doivent être dans un fichier indépendant pour que chaque test rénove l'état de la base de test de départ.
+- Définir les entités JPA.
+- Définir les répositories.
