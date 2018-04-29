@@ -1,4 +1,18 @@
-# Bash
+# bash
+
+- `export` permet de rendre une variable d'environnement disponible dans les scripts sous-jacents qui sont appelés dans l'environnement bash, par exemple :
+```bash
+hello=world
+bash -c 'echo $hello' # $hello is empty
+export hello
+bash -c 'echo $hello' # outputs "world"
+```
+- `source` permet de sourcer des scripts bash dans l'environnement lui-même :
+```bash
+hello=world
+source printhello.sh # contains "echo $hello"
+# outputs "world", even though hello was not exported
+```
 
 ## find
 
