@@ -18,6 +18,6 @@ import {PolymerElement} from './node_modules/@polymer/polymer/polymer-element.js
 
 ## polyserve
 
-- "root" c'est le répertoire du projet. Donc là où il y a un "package.json", "node_modules", etc...
+- "root" c'est le répertoire du projet. Donc là où il y a un "package.json", "node_modules", etc... On peut modifier sa valeur, sinon sa valeur est égale au répertoire où on a invoqué `polyserve`.
 - "componentDir" fait référence au répertoire où se trouve tous les webcomponents et les éléments de page (js, css). A l'origine "bower_components" mais maintenant "node_modules".
-- "packageName" fait référence au nom du projet. A l'origine c'était la valeur "name" dans "bower.json" mais maintenant on utilise la valeur "name" dans "package.json".
+- "packageName" fait référence au nom du projet. A l'origine c'était la valeur "name" dans "bower.json" mais maintenant on utilise la valeur "name" dans "package.json". Si notre nom de package est `my-package` et que l'on demande une page sous la forme `/my-package/<file>` alors polyserve sert les fichiers présents à la racine du package.

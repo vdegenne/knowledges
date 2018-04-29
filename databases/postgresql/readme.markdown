@@ -1,3 +1,45 @@
+# Postgresql
+
+## Installation (fait sur Fedora 26)
+Toutes les [instructions et détails](https://fedoraproject.org/wiki/PostgreSQL).
+
+- on installe les paquets
+```bash
+sudo dnf install postgresql-server postgresql-contrib
+```
+- on initialise l'environnement
+```bash
+sudo postgresql-setup --initdb --unit postgresql
+# sudo initdb -E UTF8
+```
+- on active le daemon
+```bash
+sudo systemctl start postgresql
+sudo systemctl enable postgresql # pour le démarrer à chaque boot
+```
+---
+- on change le mot de passe par défaut de postgres
+```bash
+sudo -u postgres psql
+
+postgres=# alter user postgres password 'newPassword';
+```
+- on crée un nouvel utilisateur
+```bash
+postgres=# CREATE USER john WITH PASSWORD 'helloworld';
+postgres=# CREATE DATABASE johndb OWNER john;
+```
+- on modifie `/var/lib/pgsql/data/pg_hba.conf` pour se connecter en `md5` ou en `peer`.
+- Si on se connecte en `peer`, on doit aussi modifier le mot de passe de l'utilisateur Unix `postgres` automatiquement créer dans les étapes précédentes.
+```bash
+sudo passwd postgres
+```
+
+### Upgrade
+```bash
+sudo postgresql-setup upgrade # si postgresql est déjà installé et qu'on souhaite juste faire une mise à jour
+```
+
 ## statements
 
 - `IN` and `any` are the same [stackoverflow.com/postgresql-in-vs-any](https://stackoverflow.com/questions/30263671/postgresql-in-vs-any "stackoverflow")
