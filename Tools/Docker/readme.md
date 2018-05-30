@@ -22,6 +22,11 @@ Assigner un nom à un containeur est vraiment important. Cela permet de pouvoir 
 
 - `docker exec -it <container-name> <command>` : exécute une commande disponible dans le containeur <container-name>.
 
+## Images
+
+- Une image est un état d'un container, un peu comme une image iso qu'on installe. Une fois déployée en containeur toutes modifications de ce containeur ne modifient pas l'image en elle-même. Une fois le containeur détruit, toutes modifications est perdues (solution: utiliser des `volumes`).
+- On peut sauvegarder une image sur un hub ou un store pour pouvoir la rendre accessible depuis n'importe où, mais on peut aussi la sauvegarder dans une archive pour la transporter (voir [Saving and loading images](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)).
+
 ## Container
 
 - S'imaginer un container comme un espace clôt, avec seulement un environnement d'exécution (runtime environment) léger (e.g. `python:2.7-slim`, `openjdk:8-jdk-alpine`, ...), des ports qu'on ouvre et qu'on ferme pour communiquer avec d'autres containeurs (e.g. `EXPOSE 80`), des fichiers qu'on place à l'intérieur et qui représentent notre application (e.g. `COPY . /usr/src/app`), des variables d'environnement qu'on ajoute pour configurer l'espace (e.g. `ENV HELLO world`) et des exécutions qu'on contrôle (e.g. `CMD python app.py`) pour lancer notre application ou nos services.
@@ -53,3 +58,11 @@ docker exec -it my-app ping my-pgsql
 ## docker-compose
 
 - On peut passer des variables d'environnement dans le docker-compose.yml en utilisant la syntaxe suivante `${<ENV_VAR>}` où <ENV_VAR> représente la clé de la variable.
+- utiliser plusieurs commandes :
+```bash
+command: >
+    bash -c "python manage.py migrate
+    && python manage.py runserver 0.0.0.0:8000"
+```
+
+
