@@ -126,7 +126,7 @@ SELECT a,
 ```
 *(from [postgresql.org/docs](https://www.postgresql.org/docs/7.4/static/functions-conditional.html))*
 
-## save and recovery
+## Save & Recovery (`pg_dump` & `pg_restore`)
 
 ```bash
 pg_dump -Fc database > database.backup
@@ -142,7 +142,7 @@ pg_restore -Fc -C -d anotherDatabase -c database.backup
 # the database "anotherDatabase" to issue the DROP and CREATE command.
 # If the database specified by -d is the same as the one saved in the "database.backup"
 # the command will fail.
-### This approach is ok if the user invoking the command is owner of
+### All commands above are ok if the user invoking the command is owner of
 ### all the objects in the database.
 
 ### If some objects are owned by another administrator (e.g. postgres)
