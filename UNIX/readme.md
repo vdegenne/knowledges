@@ -1,13 +1,11 @@
 # Unix
 
-## sudoers (sur Fedora 26)
+## sudoers (debian 9)
 
-- Pour ajouter un utilisateur dans le group sudoer : Sur Fedora, le groupe des sudoers se nomme "wheel". On doit donc associer un utilisateur à ce groupe :
 ```bash
-gpasswd wheel -a <username>
-# or the classic,
-usermod -aG wheel <username>
+adduser <username> sudo
 ```
+
 
 ## tty
 

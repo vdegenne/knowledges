@@ -1,5 +1,14 @@
 # Node.js
 
+## Installation (debian 9)
+
+```bash
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+## Others
+
 - [A propos de `fs.stat()`, `fs.readFile()`, `fs.writeFile()`, `fs.access`](https://stackoverflow.com/a/42941330/773595)
 
 ## Comportement
