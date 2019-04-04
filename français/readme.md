@@ -1,12 +1,27 @@
 # Français
 
-### On accorde toujours avec le verbe être
-Elles sont arrivées
+## Participe passé
 
-### Nom avant le verbe, on accorde
+### auxiliaire être
+On accorde toujours avec le sujet
+```
+Elles sont arrivées
+```
+
+### auxiliaire avoir
+On accorde jamais avec le sujet
+```
+Elles ont mangé
+```
+
+Mais on accorde toujours avec le COD quand il est placé avant (car on sait de quoi on parle donc)
+```
 les bonbons qu'il a mangés
 les cerises qu'il a mangées
+```
 
-### Nom après le verbe, on accorde pas
+Jamais quand celui-ci est placé après
+```
 il a mangé les bonbons
 il a mangé les cerises
+```
