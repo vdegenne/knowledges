@@ -30,7 +30,7 @@ find . -name foo* -exec chown root '{}' \;
 
 will execute `chown root foo1`, and `chown root foo2`, and so on.
 
-### structure
+### FIND
 
 If  the  whole  expression  contains  no  actions  other than -prune or -print, -print is performed on all files for which the whole expression is true.
 
@@ -47,13 +47,17 @@ But
 ```sh
 find . -name foo -prune -o -type f -print
 ```
+
 gets interpreted as
 ```sh
 find . \( -name foo -prune -o -type f -print \)
 ```
-and will print all the files from the current directory that are not under foo directories
 
-### print all files from current directory that are not under a node_modules
+and will print all the files from the current directory that are not under foo directories.
+
+Another example :
+
 ```sh
-find . -name node_modules -prune -o -type f -print
+find . \( -name node_modules -prune -o -name package.json -exec grep -Hn --color es-dev-server {} \+ \)
 ```
+*note: you can remove the parenthesis*
